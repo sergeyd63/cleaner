@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .cell {
+            float: left;
+            width: 18px;
+            height: 18px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .blue {
+            background-color: aqua;
+        }
+
+        #imgDone {
+            opacity: 0;
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 171px;
+            top: 0;
+        }
+
+        #imgDone.show {
+            animation-duration: 5s;
+            animation-name: fadeIn;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+
+<body>
+    <div id="divData">
+    </div>
+    <br>
+    <label for="robotProgress">Robot progress:</label>
+    <br>
+    <progress id="robotProgress" max="100" value=""></progress>
+    <div id="divDone"><img id="imgDone" src='https://i.giphy.com/WPfVUM3pWSMMg.gif'></div>
+    <br>
+    <div id="app"></div>
+</body>
+<script src="client.js"></script>
+
+</html>
