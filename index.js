@@ -41,6 +41,7 @@ function clean(pos) {
     });
     if (pos.h < 0 || pos.h >= floorMap.length || pos.v < 0 || pos.v >= floorMap[0].length) {
         return new Promise(resolve => setTimeout(resolve, cleaningTime));
+        // --- No Delay Solution
         // return;
     }
 
@@ -59,6 +60,7 @@ function clean(pos) {
     }
     else {
         return new Promise(resolve => setTimeout(resolve, cleaningTime));
+        // --- No Delay Solution
         // return;
     }
     let newPos = {
@@ -86,7 +88,7 @@ function clean(pos) {
         });
     });
 
-    // No Delay Solution
+    // --- No Delay Solution
     // let move = [
     //     { h: 0, v: -1 },
     //     { h: -1, v: 0 },

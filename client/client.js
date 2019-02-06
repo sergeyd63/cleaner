@@ -1,65 +1,6 @@
 const socket = io.connect('http://localhost:4040');
-let rawFloorPlan = `####################
-
-#
-            ## # #
-
-#
-# ## #####   # # #
-
-#
-# ## #####  ## # #
-
-#
-#            # #
-
-#
-# ########  #### #
-
-#
-#              # #
-
-#
-# ########  ## # #
-
-#
-               # #
-
-#
-# ########  ## # #
-
-#
-#              # #
-
-#
-# ########  ## # #
-
-#
-                 #
-
-####################`;
-
-// let q = rawFloorPlan.split(/\n/g);
-// for (let i = 0; i < q.length; i++) {
-//     q[i] = q[i].split('');
-//     q[i].fill(' ', q[i].length, 20);
-// }
-
-
-
-// for (const iterator of rawFloorPlan) {
-//     console.log(iterator);
-//     if (iterator.match(/\n/g)) {
-//         console.log('Line Break')
-//     }
-// }
 
 let floorPlan = [
-    // ["#", "#", "#"],
-    // ["#", " ", "#"],
-    // [" ", " ", " "],
-    // ["#", " ", " "],
-    // [" ", " ", " "]
     ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
     ["#", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "#", "#", " ", "#", " ", "#"],
@@ -101,7 +42,6 @@ socket.on('clean', (data) => {
     let robotProgress = document.getElementById('robotProgress');
     let imgDone = document.getElementById('imgDone');
 
-    // imgDone.classList.add('hide');
     stats.innerHTML = `Cleaned: ${data.stats.cleaned} out of ${data.stats.totalToClean}`;
     robotProgress.value = data.stats.cleaned * 100 / data.stats.totalToClean;
     robotProgress.innerHTML = `${data.stats.cleaned * 100 / data.stats.totalToClean}%`;
